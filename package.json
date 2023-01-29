@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "astro": "^2.0.2",
+    "global": "^4.4.0"
+  },
+  "name": "adam-smith-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Coder2109/adam-smith-website",
+  "author": "Coder2109 <123863856+Coder2109@users.noreply.github.com>",
+  "license": "MIT"
+}
