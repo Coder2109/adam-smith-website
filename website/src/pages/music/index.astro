@@ -3,22 +3,24 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Music';
 const description = 'Latest Music.';
-const permalink = `${Astro.site.href}blog`;
+const permalink = `${Astro.site.href}music`;
 
-let allPosts = await Astro.glob('../../data/blog-posts/*.md');
+let allPosts = await Astro.glob('../../data/music/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} current="blog">
+<BaseLayout title={title} description={description} permalink={permalink} current="news">
   <div class="container">
     <h1>Music</h1>
 
     {allPosts.map((post, index) => {
-      const href = `/blog/${post.file.split('/').pop().split('.').shift()}`;
+      const href = `/music/${post.file.split('/').pop().split('.').shift()}`;
       return (
         <div>
           { index !== 0 && <hr /> }
           <div class="post-item">
+            <img class="music-image" src={"/assets/music/" + post.frontmatter.image} />
+
             <h2>
               <a target="_blank" href={post.frontmatter.musicLink}>{post.frontmatter.title}</a>
             </h2>
@@ -47,6 +49,11 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
     text-align: left;
     text-transform: uppercase;
     margin-right: 16px;
+  }
+
+  img.music-image {
+    float: right;
+    max-width: 150px;
   }
 
   hr {
