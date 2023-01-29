@@ -19,7 +19,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
         <div>
           { index !== 0 && <hr /> }
           <div class="post-item">
-            <img class="music-image" src={"/assets/music/" + post.frontmatter.image} />
+            <a target="_blank" href={post.frontmatter.musicLink}>
+              <img class="music-image" src={"/assets/music/" + post.frontmatter.image} />
+            </a>
 
             <h2>
               <a target="_blank" href={post.frontmatter.musicLink}>{post.frontmatter.title}</a>
