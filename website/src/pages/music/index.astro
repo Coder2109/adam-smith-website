@@ -9,7 +9,7 @@ let allPosts = await Astro.glob('../../data/music/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} current="news">
+<BaseLayout title={title} description={description} permalink={permalink} current="music">
   <div class="container">
     <h1>Music</h1>
 
